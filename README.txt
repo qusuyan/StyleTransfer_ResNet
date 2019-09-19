@@ -1,0 +1,2 @@
+Before running any program listed here, download the pre-trained model from one-drive using the following link:
+https://uwprod-my.sharepoint.com/:u:/g/personal/squ27_wisc_edu/EXMeJDYhgotHqijdKTEFETUB-Q3wSJvIhijJ_P2l-kqgog?e=PWpS4d

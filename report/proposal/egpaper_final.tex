@@ -1,0 +1,65 @@
+\documentclass[10pt,twocolumn,letterpaper]{article}
+
+\usepackage{cvpr}
+\usepackage{times}
+\usepackage{epsfig}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+% Include other packages here, before hyperref.
+
+% If you comment hyperref and then uncomment it, you should delete
+% egpaper.aux before re-running latex.  (Or just hit 'q' on the first latex
+% run, let it finish, and you should be clear).
+\usepackage[breaklinks=true,bookmarks=false]{hyperref}
+
+\cvprfinalcopy % *** Uncomment this line for the final submission
+
+\def\cvprPaperID{****} % *** Enter the CVPR Paper ID here
+\def\httilde{\mbox{\tt\raisebox{-.5ex}{\symbol{126}}}}
+
+% Pages are numbered in submission mode, and unnumbered in camera-ready
+%\ifcvprfinal\pagestyle{empty}\fi
+\setcounter{page}{4321}
+\begin{document}
+
+%%%%%%%%% TITLE
+\title{Artistic Style Transfer}
+
+\author{Suyan Qu\\
+University of Wisconsin - Madison\\
+Madison, WI 53706\\
+{\tt\small squ27@wisc.edu}
+}
+
+\maketitle
+%\thispagestyle{empty}
+
+%%%%%%%%% ABSTRACT
+\begin{abstract}
+   Artistic style transfer is to apply the style of one image, the style image, typically a painting with special texture, to another image, the content image. The generated image will preserve the content presented in the content image while having the same style and texture of the style image. This project will explore the use of convolutional neural networks in the task of artistic style transfer. 
+\end{abstract}
+
+%%%%%%%%% BODY TEXT
+\section{Introduction}
+For long, the style and content of a image are considered as two distinct aspects of a picture. People associate the content of an image with objects captured by the image while the style of the image with how the captured object is presented, such as the color scheme, the stroke, etc. Despite that, the style and content of an image are actually two integrated parts that cannot be physically separated. However, modern technology makes this mission possible. With the help of deep learning neural networks, it is possible to apply the style of famous paintings like starry night to a present-day photo, faking Van Gogh's work in modern settings. This technology can potentially accelerate the advancement of contemporary art, as it allows people with no previous experience in painting to create visually appealing images. This project aims to implement such style transfer system using convolutional neural networks. 
+
+%------------------------------------------------------------------------
+\section{Related Work}
+Studies around style transfer using deep learning neural network primarily focuses on two approaches: using generative adverarial networks (GAN), or learning from the output of a pretrained convolutional neural network. The first approach, as presented by Berkeley AI Research laboratory ~\cite{zhu}, uses two models: a generator and a discriminator. The generator tries to learn a mapping function from the space consisting of photographs to the space consisting of Monet's paintings during training. Its result will be sent to the discriminator, which knows the difference between a landscope photograph and a painting and will estimate whether this output is likely a painting by Monet. The second approach, best illustrated by Gatys et al.~\cite{Gatys}, bases upon the recognition that style is a more abstractive aspect of an image, which are typically learned in deeper layers of a neural network. Calculating the difference between the outputs from deep layers given style and content images, the stylistic difference can be quantified, which can be used to alter the content image. 
+
+%-------------------------------------------------------------------------
+\section{Tentative Approach}
+This project aims to create artistic style transfer. We will first implement the model presented by Gatys et al. Given a pretrained CNN model, we will implement the way to quantify the difference between the content of two images as well as between the style of two images. This difference, or loss, will be used to calculate the gradient of the content image, which will be used to update the image. Then various attempts~\cite{Johnson}~\cite{Ulyanov}~\cite{Ulyanov2} will be used to improve the performance and the result of this basic model. 
+
+%-------------------------------------------------------------------------
+\section{Evaluation Plan}
+The result of this model will be evaluated based on how much of the content of the content image is preserved and how visually similar the output image is compared to the style image, both of which would be best evaluated by the loss function used for training. Therefore, one way to evaluate this model is through calculating the loss function based on the final output. However, similarity is definitely not the only thing significant. The output should be also evaluated upon artisticity, which cannot be quantified through computation. Therefore, huaman inspection is necessary for evaluating this model. 
+
+{\small
+\bibliographystyle{ieee_fullname}
+\bibliography{egbib}
+}
+
+\end{document}

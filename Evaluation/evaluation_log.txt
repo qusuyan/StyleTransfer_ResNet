@@ -1,0 +1,11 @@
+Transform Net + Warmup:
+	Style Loss: 72501340.0
+	Content Loss: 42328.656
+
+Transform Net: 
+	Style Loss: 622746200.0
+	Content Loss: 46208.43
+
+Backprop:
+	Style Loss: 2678063.8
+	Content Loss: 32143.725
